@@ -20,14 +20,14 @@
                 </a>
             </li>
             <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-                <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
+                <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="false">
                     {{--          <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>--}}
                     <i class="material-icons">supervised_user_circle</i>
                     <p>User Management
                         <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse show" id="laravelExample">
+                <div class="collapse" id="laravelExample">
                     <ul class="nav">
                         <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('profile.edit') }}">
@@ -44,8 +44,8 @@
                     </ul>
                 </div>
             </li>
-            <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ route('table') }}">
+            <li class="nav-item{{ $activePage == 'books' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('book.index') }}">
                     <i class="material-icons">library_books</i>
                     <p>Books</p>
                 </a>

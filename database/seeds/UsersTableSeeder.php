@@ -13,6 +13,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->truncate();
+
         DB::table('users')->insert([
             'name' => 'Systemovy Administrator',
             'email' => 'admin@trionyx.sk',

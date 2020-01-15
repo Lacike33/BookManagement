@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
+use App\User;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $booksCount = Book::all()->count();
+        $usersCount = User::all()->count();
+
+        return view('dashboard',compact(['booksCount','usersCount']));
     }
 }

@@ -10,9 +10,9 @@
               <div class="card-icon">
                 <i class="material-icons">content_copy</i>
               </div>
-              <p class="card-category">Used Space</p>
-              <h3 class="card-title">49/50
-                <small>GB</small>
+              <p class="card-category">Pocet knih</p>
+              <h3 class="card-title">{{ $booksCount }}
+                <small>Ks</small>
               </h3>
             </div>
             <div class="card-footer">
@@ -23,23 +23,40 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card card-stats">
-            <div class="card-header card-header-success card-header-icon">
-              <div class="card-icon">
-                <i class="material-icons">store</i>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">store</i>
+                      </div>
+                      <p class="card-category">Revenue</p>
+                      <h3 class="card-title">$34,245</h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          {{--                <i class="material-icons">date_range</i> Last 24 Hours--}}
+                      </div>
+                  </div>
               </div>
-              <p class="card-category">Revenue</p>
-              <h3 class="card-title">$34,245</h3>
-            </div>
-            <div class="card-footer">
-              <div class="stats">
-{{--                <i class="material-icons">date_range</i> Last 24 Hours--}}
-              </div>
-            </div>
           </div>
-        </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">store</i>
+                      </div>
+                      <p class="card-category">Users</p>
+                      <h3 class="card-title">{{ $usersCount }} <small>Ks</small></h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          {{--                <i class="material-icons">date_range</i> Last 24 Hours--}}
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
+
 
     </div>
   </div>
