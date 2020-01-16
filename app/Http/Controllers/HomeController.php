@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Genre;
 use App\User;
 
 class HomeController extends Controller
@@ -26,7 +27,8 @@ class HomeController extends Controller
     {
         $booksCount = Book::all()->count();
         $usersCount = User::all()->count();
+        $genresCount = Genre::all()->count();
 
-        return view('dashboard',compact(['booksCount','usersCount']));
+        return view('dashboard',compact(['booksCount','usersCount','genresCount']));
     }
 }

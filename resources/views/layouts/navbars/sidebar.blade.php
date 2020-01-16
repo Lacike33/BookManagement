@@ -50,6 +50,12 @@
                     <p>Books</p>
                 </a>
             </li>
+            <li class="nav-item{{ $activePage == 'genres' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('genre.index') }}">
+                    <i class="material-icons">bookmark_border</i>
+                    <p>Genres</p>
+                </a>
+            </li>
 
         </ul>
     </div>
