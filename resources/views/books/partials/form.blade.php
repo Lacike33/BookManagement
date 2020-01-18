@@ -18,6 +18,44 @@
 <div class="row">
     <label class="col-sm-2 col-form-label"></label>
     <div class="col-sm-7">
+        <div class="form-group{{ $errors->has('genre') ? ' has-danger' : '' }}">
+            <select name="genre_id" id="input-genre"
+                    {{--                    value="{{ old('genre') ? old('genre') : isset($genre) ? $genre->name : 'Genre' }}"--}}
+                    class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}"
+                    required>
+                {{--                <option value="">Genre ...</option>--}}
+
+                @if(isset($book))
+                    @foreach($genres as $genre)
+                        @if($genre->id == $book->genre->id)
+                            <option value="{{ $book->genre->id }}" selected>{{ $book->genre->name }}</option>
+                        @else
+                            <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                        @endif
+                    @endforeach
+                @else
+                    <option value="">Genre ...</option>
+                    @foreach($genres as $genre)
+                        <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                    @endforeach
+                @endif
+
+                {{--                @foreach($genres as $genre)--}}
+                {{--                    <option value="{{ $genre->id }}">{{ $genre->name }}</option>--}}
+                {{--                @endforeach--}}
+
+            </select>
+            @if ($errors->has('genre'))
+                <span id="genre-error" class="error text-danger"
+                      for="input-genre">{{ $errors->first('genre') }}</span>
+            @endif
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <label class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-7">
         <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                             <textarea rows="4" id="input-description"
                                                       class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"

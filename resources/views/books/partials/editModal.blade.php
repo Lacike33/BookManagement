@@ -25,6 +25,35 @@
 
                                     <div class="form-group">
                                         <div class="input-group">
+                                            <select name="genre_id" id="input-workParent"
+                                                    {{--                    value="{{ old('genre') ? old('genre') : isset($genre) ? $genre->name : 'Genre' }}"--}}
+                                                    class="form-control form-control-alternative{{ $errors->has('genre') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                {{--                <option value="">Genre ...</option>--}}
+
+                                                @if(isset($book))
+                                                    <option
+                                                        value="{{ $book->genre->id }}">{{ $book->genre->name }}</option>
+                                                    @foreach($genres as $genre)
+                                                        <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                                                    @endforeach
+                                                @else
+                                                    <option value="">Genre ...</option>
+                                                    @foreach($genres as $genre)
+                                                        <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                                                    @endforeach
+                                                @endif
+
+                                                {{--                @foreach($genres as $genre)--}}
+                                                {{--                    <option value="{{ $genre->id }}">{{ $genre->name }}</option>--}}
+                                                {{--                @endforeach--}}
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
                                             <textarea rows="4" class="form-control" id="event_reason" name="description"
                                                       placeholder="{{ __('Description ...') }}" required>{{ old('name',$book->description) }}</textarea>
                                         </div>

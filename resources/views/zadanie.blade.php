@@ -65,8 +65,8 @@
                             zanrov – rovnako ako ste vytvorili pre spravu knih.
                             Nasledujucim krokom bude potrebne prepojit zanre s knihami a to sposobom, ze kniha moze mat
                             len jeden zaner a zaner moze byt priradeny k viacerym kniham, tzn. Kardinalita 1:N.</p>
-                            <strong>Postup</strong> :
-                            <ol>
+                        <strong>Postup</strong> :
+                        <ol>
                             <li>Vytvorit CRUD administraciu pre zanre podla vzoru zadania c.1 (Formu nechavame
                                 na riesitelovi)
                             </li>
@@ -79,6 +79,10 @@
                                 jeho vybere fungovat autocomplete.
                             </li>
                         </ol>
+                        <p>
+                            <u>OTAZKA</u> :<br>
+                            <em>Co sa stane ked k nejakej knihe priradite zaner a ten nasledne zmazete? Ako tento
+                                pripad vyriesite? (netreba implementovat, len vysvetlit).</em></p>
                         <h4><u>Laravel zadanie c.3</u></h4>
                         <p>Vytvorit middleware, ktory bude suplovat funkciu "monitoringu".</p>
                         <ol>
@@ -101,7 +105,29 @@
                         <h4><u>Laravel zadanie c.5</u></h4>
                         <p>Databazu nevytvarat cez laravel migracie, ale rucne cez DDL prikazy, spolu aj s referencnymi
                             integritami. Ukazat na par zaznamoch aj pouzitie DML prikazov na naplnenie databazy.</p>
-                        <h4><strong>Riesitelova pridana hodnota</strong> :</h4>
+
+                        <h4><strong>Riesenie</strong> :</h4>
+
+                        <h5>FRONT-END</h5>
+                        <p>
+                        <ul>
+                            <li> Pouzity template od timu <a target="_blank"
+                                                             href="https://www.creative-tim.com/">CREATIVE</a>.
+                            </li>
+                            <li>Spravene riesenie pridavania zaznamov aj cez route url ale aj MODAL</li>
+                        </ul>
+
+                        </p>
+                        <h5>BACK-END</h5>
+                        <ul>
+                            <li>Vytvorene migracie</li>
+                            <li>Pripraveny faker pre naplnenie DB</li>
+                            <li>Priprava pre multi jazycnu stranku</li>
+                            <li>Validacia cez requesty</li>
+                            <li>Remote repozitar na <a target="_blank" href="https://github.com/Lacike33/BookManagement">GITHUB</a></li>
+                            <li><a target="_blank" href="https://kniznica.herokuapp.com/">Aplikacia</a> nasadene na testovacom serveri</li>
+                            <li>Zautomatizovany proces nasadenia (po kazdom PUSH)</li>
+                        </ul>
                     </div>
                 </div>
             </div>

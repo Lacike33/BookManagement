@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="card card-signup card-plain">
                 <div class="modal-header">
-                    <h5 class="modal-title card-title">Add book</h5>
+                    <h5 class="modal-title card-title">Add Genre</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <i class="material-icons">clear</i>
                     </button>
@@ -12,7 +12,7 @@
                     <div class="row justify-content-md-center">
                         <div class="col-10">
 
-                            <form class="form" method="POST" action="{{ route('book.store') }}">
+                            <form class="form" method="POST" action="{{ route('genre.store') }}">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
@@ -28,22 +28,9 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <input type="number" placeholder="Pages ..." class="form-control" name="pages" value="{{ old('pages') }}" required/>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <input type="number" placeholder="Year ..." class="form-control" name="year" value="{{ old('year') }}" required/>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="modal-footer justify-content-center" style="border-top: none">
                                     <button type="submit"
-                                            class="btn btn-primary btn-round">{{ __('Save book') }}</button>
+                                            class="btn btn-primary btn-round">{{ __('Save genre') }}</button>
                                 </div>
                             </form>
                         </div>

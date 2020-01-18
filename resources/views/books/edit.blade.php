@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
 
-                                @include('books.partials.form', $book)
+                                @include('books.partials.form', [ $book, $genres ])
 
                             </div>
                             <div class="card-footer ml-auto mr-auto">

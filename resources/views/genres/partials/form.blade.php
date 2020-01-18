@@ -5,7 +5,7 @@
             <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                    name="name" id="input-name" type="text"
                    placeholder="{{ __('Name ...') }}"
-                   value="{{ old('name') ? old('name') : isset($book) ? $book->name : '' }}"
+                   value="{{ old('name') ? old('name') : isset($genre) ? $genre->name : '' }}"
                    required="true" aria-required="true"/>
             @if ($errors->has('name'))
                 <span id="name-error" class="error text-danger"
@@ -23,7 +23,7 @@
                                                       class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                                       name="description" type="text"
                                                       placeholder="{{ __('Description ...') }}"
-                                                      required>{{ old('description') ? old('description') : isset($book) ? $book->description : '' }}</textarea>
+                                                      required>{{ old('description') ? old('description') : isset($genre) ? $genre->description : '' }}</textarea>
 
             @if ($errors->has('email'))
                 <span id="description-error" class="error text-danger"
@@ -32,40 +32,3 @@
         </div>
     </div>
 </div>
-
-<div class="row">
-    <label class="col-sm-2 col-form-label" for="input-pages"></label>
-    <div class="col-sm-7">
-        <div class="form-group{{ $errors->has('pages') ? ' has-danger' : '' }}">
-            <input
-                class="form-control{{ $errors->has('pages') ? ' is-invalid' : '' }}"
-                type="number" name="pages" id="input-pages"
-                placeholder="{{ __('Pages ...') }}"
-                value="{{ old('pages') ? old('pages') : isset($book) ? $book->pages : '' }}"
-                required/>
-            @if ($errors->has('pages'))
-                <span id="pages-error" class="error text-danger"
-                      for="input-pages">{{ $errors->first('pages') }}</span>
-            @endif
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <label class="col-sm-2 col-form-label" for="input-year"></label>
-    <div class="col-sm-7">
-        <div class="form-group">
-            <input class="form-control{{ $errors->has('year') ? ' is-invalid' : '' }}"
-                   name="year"
-                   id="input-year" type="number"
-                   placeholder="{{ __('Year ...') }}"
-                   value="{{ old('year') ? old('year') : isset($book) ? $book->year : '' }}"
-                   required/>
-            @if ($errors->has('year'))
-                <span id="year-error" class="error text-danger"
-                      for="input-year">{{ $errors->first('year') }}</span>
-            @endif
-        </div>
-    </div>
-</div>
-

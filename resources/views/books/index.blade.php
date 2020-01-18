@@ -33,8 +33,8 @@
                                        data-toggle="modal">{{ __('Add book Via Modal') }}
                                     </a>
                                 </div>
+                                @include('books.partials.createModal')
                             </div>
-                            @include('books.partials.createModal')
 
                             <div class="table-responsive">
                                 <table class="table">
@@ -44,6 +44,9 @@
                                     </th>
                                     <th>
                                         {{ __('Name') }}
+                                    </th>
+                                    <th>
+                                        {{ __('Genre') }}
                                     </th>
                                     <th>
                                         {{ __('Description') }}
@@ -66,13 +69,15 @@
                                             </td>
                                             <td>
                                                 <!-- Button trigger modal -->
-                                                <button type="button" class="dropdown-item" data-toggle="modal"
-                                                        data-target="#edit-modal-{{ $book->id }}"> {{ $book->name }}
-                                                </button>
-                                                @include('books.partials.editModal', ['book' => $book])
+                                                <div style="cursor: pointer" data-toggle="modal"
+                                                        data-target="#edit-modal-{{ $book->id }}">{{ $book->name }}
+                                                </div>
+                                                @include('books.partials.editModal', ['book' => $book, 'genres' => $genres])
                                             </td>
                                             <td>
-                                                {{--                              {{ $user->created_at->format('Y-m-d') }}--}}
+                                                {{ $book->genre->name}}
+                                            </td>
+                                            <td>
                                                 {{ $book->description}}
                                             </td>
                                             <td>
@@ -94,7 +99,7 @@
                                                     </a>
                                                     <button type="button" class="btn btn-danger btn-link"
                                                             data-original-title="" title=""
-                                                            onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
+                                                            onclick="confirm('{{ __("Are you sure you want to delete this book?") }}') ? this.parentElement.submit() : ''">
                                                         <i class="material-icons">close</i>
                                                         <div class="ripple-container"></div>
                                                     </button>
