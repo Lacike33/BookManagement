@@ -127,6 +127,7 @@
                             <li>Remote repozitar na <a target="_blank" href="https://github.com/Lacike33/BookManagement">GITHUB</a></li>
                             <li><a target="_blank" href="https://kniznica.herokuapp.com/">Aplikacia</a> nasadene na testovacom serveri</li>
                             <li>Zautomatizovany proces nasadenia (po kazdom PUSH)</li>
+                            <li>Aplikacia nasadena na zivy server</li>
                         </ul>
                     </div>
                 </div>
