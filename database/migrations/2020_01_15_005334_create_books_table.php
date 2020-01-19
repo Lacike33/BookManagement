@@ -17,6 +17,8 @@ class CreateBooksTable extends Migration
 
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('genre_id');
+            $table->foreign('genre_id')->references('id')->on('genres')->onDelete('cascade');
             $table->string('name');
             $table->text('description');
             $table->unsignedSmallInteger('pages');
@@ -33,6 +35,10 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
+        Schema::table('books', function (Blueprint $table) {
+            // 1. Drop foreign key constraints
+            $table->dropForeign(['genre_id']);
+        });
         Schema::dropIfExists('books');
     }
 }
